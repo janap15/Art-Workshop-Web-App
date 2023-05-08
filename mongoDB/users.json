@@ -1,0 +1,155 @@
+[{
+  "_id": {
+    "$oid": "63da7c2de5546e813075ca02"
+  },
+  "username": "admin",
+  "password": "Admin123@",
+  "firstname": "admin",
+  "lastname": "admin",
+  "phone": "011/111-0111",
+  "email": "admin@gmail.com",
+  "type": 0,
+  "status": "aktivan",
+  "profileImg": ""
+},{
+  "_id": {
+    "$oid": "63da7d7ce5546e813075ca07"
+  },
+  "username": "org1",
+  "password": "Organizator1@",
+  "firstname": "organizacija1",
+  "lastname": "organizacija1",
+  "phone": "011/555-5555",
+  "email": "organizator1@gmail.com",
+  "orgName": "Organizator 15",
+  "MB": 12121212,
+  "type": 2,
+  "status": "aktivan",
+  "profileImg": "avatar-icon.png",
+  "state": "Republika Srbija",
+  "city": "Beograd",
+  "postNum": "11000",
+  "street": "Danteova",
+  "streetNum": "10"
+},{
+  "_id": {
+    "$oid": "63db025affa4b28e879e155f"
+  },
+  "username": "janaorg",
+  "password": "Jana123@org",
+  "firstname": "Jana",
+  "lastname": "Pašajlić",
+  "phone": "011/111-1111",
+  "email": "jana.org@gmail.com",
+  "orgName": "Jana organizacija",
+  "MB": 11112222,
+  "type": 2,
+  "status": "aktivan",
+  "__v": 0,
+  "profileImg": "avatar-icon.png",
+  "state": "Republika Srbija",
+  "city": "Raška",
+  "postNum": 36350,
+  "street": "Svetog Save",
+  "streetNum": 1
+},{
+  "_id": {
+    "$oid": "63eb6f19b27b30097f75ca53"
+  },
+  "username": "jana",
+  "password": "JanaP_15@!",
+  "firstname": "Jana",
+  "lastname": "Pašajlic",
+  "phone": "065/123-4561",
+  "email": "jana.pasajlic@gmail.com",
+  "orgName": "",
+  "MB": 0,
+  "type": 1,
+  "status": "aktivan",
+  "profileImg": "jana.png",
+  "city": "",
+  "postNum": 0,
+  "street": "",
+  "streetNum": 0
+},{
+  "_id": {
+    "$oid": "63ed342724ebb284cb9ed6b2"
+  },
+  "username": "peraorg",
+  "password": "Pera123@pera",
+  "firstname": "Pera",
+  "lastname": "Peric",
+  "phone": "222/222-2222",
+  "email": "pera@gmail.com",
+  "profileImg": "porschejpg.jpg",
+  "orgName": "Pera Organizacija",
+  "MB": 11111111,
+  "type": 2,
+  "status": "aktivan",
+  "state": "Republika Srbija",
+  "city": "Korlace",
+  "street": "Korlace ulica",
+  "postNum": 36350,
+  "__v": 0,
+  "streetNum": 1
+},{
+  "_id": {
+    "$oid": "63ed349d24ebb284cb9ed6b3"
+  },
+  "username": "zikaorg",
+  "password": "org123@Zika",
+  "firstname": "Zika",
+  "lastname": "Zikic",
+  "phone": "555/555-5555",
+  "email": "org.zika@gmail.com",
+  "profileImg": "avatar-icon.png",
+  "orgName": "Vuk organizacija",
+  "state": "Republika Srbija",
+  "city": "Beograd",
+  "street": "Bulevar Kralja Alkesandra",
+  "streetNum": 25,
+  "postNum": 11000,
+  "MB": 12312321,
+  "type": 2,
+  "status": "obrada",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ed351724ebb284cb9ed6b4"
+  },
+  "username": "janap15",
+  "password": "jana123@Jana",
+  "firstname": "Jana",
+  "lastname": "Pašajlić",
+  "phone": "888/888-8888",
+  "email": "jana@gmail.com",
+  "profileImg": "jana.png",
+  "orgName": "",
+  "state": "",
+  "street": "",
+  "streetNum": 0,
+  "postNum": null,
+  "MB": null,
+  "type": 1,
+  "status": "neaktivan",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ed401958d236cd302840d1"
+  },
+  "username": "ana",
+  "password": "AnaAna@123",
+  "firstname": "Ana",
+  "lastname": "Anić",
+  "phone": "064/444-4444",
+  "email": "ana@gmail.com",
+  "orgName": "",
+  "state": "",
+  "city": "",
+  "postNum": null,
+  "street": "",
+  "MB": null,
+  "type": 1,
+  "status": "obrada",
+  "__v": 0
+}]

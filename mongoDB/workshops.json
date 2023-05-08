@@ -1,0 +1,230 @@
+[{
+  "_id": {
+    "$oid": "63ea3ad85a52268c3b4f13c7"
+  },
+  "title": "Moderna umetnost",
+  "organizer": "janaorg",
+  "photo": "moderna1.jpg",
+  "gallery": [
+    "moderna2.jpg",
+    "moderna3.jpg",
+    "moderna4.jpg"
+  ],
+  "date": {
+    "$date": {
+      "$numberLong": "1676570400000"
+    }
+  },
+  "address": "Bulevar Kralja Aleksandra 73, Beograd",
+  "description_short": "Moderna umetnost je umetnost koja označava umetnost od konca 19. veka sve do 70-ih godina 20. veka.",
+  "description_long": "Modernizam, mada danas obuhvata avangardu i umetnost do polovine 20. veka, je prvobitno oznaka za međunarodni stil razvijan oko 1900. godine, a koji je u Francuskoj nazvan Art Nouveau, u Engleskoj, modern style, u Rusiji, Srbiji i drugim jugoslovenskim zemljama moderni stil ili moderna, u Nemačkoj Jugendstil, a u Austriji Sezessionstil (secesija).",
+  "number_participants": 15,
+  "number_left": 1,
+  "pending": [
+    "jana",
+    "jana"
+  ],
+  "accepted": [],
+  "likes": [],
+  "comments": [],
+  "waiting": [
+    "jana"
+  ],
+  "status": "odobrena"
+},{
+  "_id": {
+    "$oid": "63ea3aff5a52268c3b4f13c8"
+  },
+  "title": "Renesansna umetnost",
+  "organizer": "org1",
+  "photo": "renesansa2.jpg",
+  "gallery": [
+    "monalisa.jpg",
+    "renesansa1.jpg",
+    "renesansa3.jpg"
+  ],
+  "date": {
+    "$date": {
+      "$numberLong": "1676818800000"
+    }
+  },
+  "address": "Kneza Miloša 15, Beograd",
+  "description_short": "Renesansa je period umetnosti koji je označio prekid sa srednjim vekom. ",
+  "description_long": "Renesansa je jedan od najkrupnijih pokreta u kulturi zapadne Evrope, koji je doveo do preokreta u nauci, filozofiji, književnosti i likovnim umetnostima",
+  "number_participants": 15,
+  "number_left": 15,
+  "pending": [],
+  "accepted": [
+    "jana",
+    "vuk",
+    "jana",
+    "vuk"
+  ],
+  "likes": [
+    "jana"
+  ],
+  "comments": [
+    {
+      "$oid": "63eb6d25b27b30097f75ca4e"
+    },
+    {
+      "$oid": "63eb7a7bb27b30097f75ca54"
+    },
+    {
+      "$oid": "63eba1dae9341d890b41f303"
+    },
+    {
+      "$oid": "63eba280e9341d890b41f31e"
+    },
+    {
+      "$oid": "63eba30ce9341d890b41f335"
+    }
+  ],
+  "waiting": [],
+  "status": "odobrena"
+},{
+  "_id": {
+    "$oid": "63eaa6bb5a52268c3b4f13cc"
+  },
+  "title": "Renesansna umetnost",
+  "organizer": "org1",
+  "photo": "king.jpg",
+  "gallery": [],
+  "date": {
+    "$date": {
+      "$numberLong": "1676570400000"
+    }
+  },
+  "address": "Ruzveltova 10, Beograd",
+  "description_short": "short",
+  "description_long": "long",
+  "number_participants": 15,
+  "number_left": 14,
+  "pending": [],
+  "accepted": [
+    "jana"
+  ],
+  "likes": [
+    "jana"
+  ],
+  "comments": [],
+  "waiting": [],
+  "status": "otkazana"
+},{
+  "_id": {
+    "$oid": "63ebe815089025265c6483ec"
+  },
+  "title": "Igre sa kartama",
+  "organizer": "jana",
+  "photo": "king.jpg",
+  "gallery": [
+    "karte1.jpg",
+    "karte2.jpg",
+    "karte3.jpg"
+  ],
+  "date": {
+    "$date": {
+      "$numberLong": "1676561400000"
+    }
+  },
+  "address": "Dečanska 10, Beograd",
+  "description_short": "Dođite da igramo razne kartaške igre!",
+  "description_long": "Kartaške igre postoje vekovima i vrlo su raznovrsne. Od Dalekog Istoka do Francuske i drugih zapadnih zemalja, istorija kockanja doživela je brojne promene tokom vekova, ali najveća je bila pojava karata kakve poznajemo danas!   Prema zapisima, op",
+  "number_participants": 15,
+  "number_left": 0,
+  "waiting": [],
+  "accepted": [],
+  "pending": [],
+  "likes": [],
+  "comments": [],
+  "status": "ucesnik_zahtev",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ed214824ebb284cb9ed6a8"
+  },
+  "title": "Umetnost starog Egipta",
+  "organizer": "peraorg",
+  "photo": "stari3.jpg",
+  "gallery": [
+    "stari1.jpg",
+    "stari2.jpg",
+    "stari4.jpg"
+  ],
+  "date": {
+    "$date": {
+      "$numberLong": "1677076200000"
+    }
+  },
+  "address": "Ada Ciganlija, Beograd",
+  "description_short": "Umetnost je stvarana sa idejom da bude korisna i nije se govorilo o lepoti umetničkih dela nego o njihovoj efikasnosti",
+  "description_long": "Umetnost starog Egipta se odnosi na arhitektonske građevine, slike, vajarska i dela primenjenih umetnosti starog Egipta, počev od praistorije pa sve do rimskog osvajanja Egipta 30. godine p. n. e. Istorija Egipta je najduža od svih starih civilizacija koje su se razvijale na Sredozemlju i prostire se u vremenu od oko 3000. godine p. n. e. pa sve do 4. veka n. e.",
+  "number_participants": 25,
+  "number_left": 0,
+  "waiting": [],
+  "accepted": [],
+  "pending": [],
+  "likes": [],
+  "comments": [],
+  "status": "odobrena",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63ed78bca2ff16b5a70923b3"
+  },
+  "title": "Porsche automobili",
+  "organizer": "org1",
+  "photo": "porschejpg.jpg",
+  "gallery": [
+    "porsche1.jpg",
+    "porsche2.jpg",
+    "porsche3.jpg"
+  ],
+  "date": {
+    "$date": {
+      "$numberLong": "1676982600000"
+    }
+  },
+  "address": "Zemun Beograd",
+  "description_short": "Fotografije najlepših Porsche automobila",
+  "description_long": "Fotografije modela automobila Cayenne, 911, Macan i Tycan! Najlepši i najbolji automobili!",
+  "number_participants": 25,
+  "number_left": 0,
+  "waiting": [],
+  "accepted": [],
+  "pending": [],
+  "likes": [],
+  "comments": [],
+  "status": "organizator_zahtev",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63effc9ae1ca21cc754fe225"
+  },
+  "title": "Apstraktna umetnost",
+  "organizer": "org1",
+  "photo": "asptr1.jpg",
+  "gallery": [
+    "apstr2.jpg",
+    "apstr3.jpg",
+    "apstr4.jpg",
+    "asptr1.jpg"
+  ],
+  "date": {
+    "$date": {
+      "$numberLong": "1676982600000"
+    }
+  },
+  "address": "Zemun Beograd",
+  "description_short": "Apstraktna umetnost je umetnost koja ne prikazuje vidljivu stvarnost prirode, nego su joj jedini sadržaji likovni elementi, linija, ravan ili oblik, boja, površina ili masa.",
+  "description_long": "Apstraktna ili nepredmetna umetnost se veže za subjektivno, emotivno i racionalno umetničko izražavanje, koje ne sledi prirodne zakone boje, teksture, oblika i prostora. Bilo da se radi o slikarstvu, grafici i vajarstvu ili nekoj drugoj umetničkoj formi, umetnik ovde izražava sebe slobodnim korišćenjem linija, likova, boje, teksture ili oblika i prostora. Unošenje geometrijskih likova (u slikarstvu) i oblika (u vajarstvu) je u vezi sa „racionalnim“ nepredmetnim umetničkim izražavanjem.",
+  "number_participants": 25,
+  "number_left": 0,
+  "waiting": [],
+  "accepted": [],
+  "pending": [],
+  "likes": [],
+  "comments": [],
+  "status": "odobrena",
+  "__v": 0
+}]

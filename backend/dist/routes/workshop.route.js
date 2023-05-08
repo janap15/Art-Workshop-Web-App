@@ -1,0 +1,32 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const workshop_controller_1 = require("../controllers/workshop.controller");
+const workshopRouter = express_1.default.Router();
+workshopRouter.route('/getAllWorkshops').get((req, res) => new workshop_controller_1.WorkshopController().getAllWorkshops(req, res));
+workshopRouter.route('/getAllAcceptedWorkshops').get((req, res) => new workshop_controller_1.WorkshopController().getAllAcceptedWorkshops(req, res));
+workshopRouter.route('/getAllRequestedWorkshops').get((req, res) => new workshop_controller_1.WorkshopController().getAllRequestedWorkshops(req, res));
+workshopRouter.route('/getWorkshop').post((req, res) => new workshop_controller_1.WorkshopController().getWorkshop(req, res));
+workshopRouter.route('/getAllWorkshopsOfUser').post((req, res) => new workshop_controller_1.WorkshopController().getAllWorkshopsOfUser(req, res));
+workshopRouter.route('/getAllWorkshopsOfOrganizer').post((req, res) => new workshop_controller_1.WorkshopController().getAllWorkshopsOfOrganizer(req, res));
+workshopRouter.route('/getAllWorkshopsOfUserPending').post((req, res) => new workshop_controller_1.WorkshopController().getAllWorkshopsOfParticipantPending(req, res));
+workshopRouter.route('/getAllLikedWorkshops').post((req, res) => new workshop_controller_1.WorkshopController().getAllLikedWorkshops(req, res));
+workshopRouter.route('/removeLike').post((req, res) => new workshop_controller_1.WorkshopController().removeLike(req, res));
+workshopRouter.route('/removeFromAccepted').post((req, res) => new workshop_controller_1.WorkshopController().removeFromAccepted(req, res));
+workshopRouter.route('/addToWaiting').post((req, res) => new workshop_controller_1.WorkshopController().addToWaiting(req, res));
+workshopRouter.route('/addToPending').post((req, res) => new workshop_controller_1.WorkshopController().addToPending(req, res));
+workshopRouter.route('/addLike').post((req, res) => new workshop_controller_1.WorkshopController().addLike(req, res));
+workshopRouter.route('/getComment').post((req, res) => new workshop_controller_1.WorkshopController().getComment(req, res));
+workshopRouter.route('/addComment').post((req, res) => new workshop_controller_1.WorkshopController().addComment(req, res));
+workshopRouter.route('/editWorkshop').post((req, res) => new workshop_controller_1.WorkshopController().editWorkshop(req, res));
+workshopRouter.route('/getPhoto').post((req, res) => new workshop_controller_1.WorkshopController().getPhoto(req, res));
+workshopRouter.route('/editWorkshopStatus').post((req, res) => new workshop_controller_1.WorkshopController().editWorkshopStatus(req, res));
+workshopRouter.route('/addToAccepted').post((req, res) => new workshop_controller_1.WorkshopController().addToAccepted(req, res));
+workshopRouter.route('/removeFromPending').post((req, res) => new workshop_controller_1.WorkshopController().removeFromPending(req, res));
+workshopRouter.route('/requestToAddWorkshop').post((req, res) => new workshop_controller_1.WorkshopController().requestToAddWorkshop(req, res));
+workshopRouter.route('/removeWorkshop').post((req, res) => new workshop_controller_1.WorkshopController().removeWorkshop(req, res));
+exports.default = workshopRouter;
+//# sourceMappingURL=workshop.route.js.map
