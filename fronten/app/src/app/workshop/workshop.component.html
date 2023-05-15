@@ -1,0 +1,23 @@
+
+
+    <img class="workshop-photo" style="max-width: 250px; max-height: 250px;" [src]="imgSrc"/>
+    <mat-card-title>{{ workshop.title }}</mat-card-title>
+    <mat-card-subtitle>{{ workshop.date.getDate().toString().padStart(2, '0')}}-{{ (workshop.date.getMonth()+1).toString().padStart(2, '0')}}-{{ workshop.date.getFullYear()}}
+        u {{workshop.date.getHours().toString().padStart(2, '0')}}:{{workshop.date.getMinutes().toString().padStart(2, '0')}}
+    </mat-card-subtitle>
+    <mat-card-content>
+    Adresa: {{ workshop.address }}
+    <br/>
+    <p>Kratak opis: {{ workshop.description_short }}</p> 
+    <br/>
+    <p *ngIf="logged">
+        <a [routerLink]="'/workshopDetail/' + workshop._id" class="link">Detalji radionce</a>
+    </p>
+    <p *ngIf="logged && (workshop.organizer == logged.username || logged.type == 0)">
+        <a [routerLink]="'/editWorkshop/' + workshop._id" class="link">Uredi radioncu</a>
+    </p>
+    
+    </mat-card-content>
+
+
+

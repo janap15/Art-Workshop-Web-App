@@ -1,0 +1,94 @@
+<div *ngIf="logged && logged.type == 1">
+    <div class="text-center">
+        <br/>
+       <span class="header">Radionice na kojima ste prijavljeni</span>
+       <br/>
+    </div>
+ 
+    <div class="text-center" *ngFor="let shop of acceptedAndPendingWorkshops" >
+        <mat-card>
+    
+        <app-workshop [workshop]="shop" [logged]="logged">
+
+        </app-workshop>
+        <button mat-raised-button *ngIf="canCancel(shop)" color="accent" (click)="cancel(shop)">Otkaži</button>
+    </mat-card>
+    </div>
+</div>
+
+<div id="serach-div" *ngIf="!logged || logged.type == 1">
+
+    <form class="text-center search-form">
+        <br/>
+        <mat-form-field appearance="fill">
+            <mat-label>Unesite naziv radionice</mat-label>
+            <input matInput type="text" [(ngModel)]="title" name="title">
+        </mat-form-field> &nbsp;
+        <mat-form-field appearance="fill">
+            <mat-label>Unesite adresu radionice</mat-label>
+            <input matInput type="text" [(ngModel)]="address" name="address">
+        </mat-form-field> 
+
+        <button mat-raised-button color="primary" (click)="search()">Pretraži</button>
+        <br/>
+    </form>
+
+    <br/>
+    <form class="search-form text-center">
+        Sortiraj prema: &nbsp;&nbsp;
+        <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="title" name="title" (click)="sortBy('title')">Nazivu</mat-radio-button>&nbsp;&nbsp;
+            <mat-radio-button value="date" name="date" (click)="sortBy('date')">Datumu</mat-radio-button>
+        </mat-radio-group>
+    </form>
+    <br>
+    <hr/>
+</div>
+
+
+
+<div class="text-center" *ngIf="!logged || logged.type == 1">
+    <br/>
+    <span class="header">Aktivne radionice </span>
+    <br/>
+    <div class="text-center" *ngFor="let shop of activeWorkshops" >
+        <mat-card>
+
+        <app-workshop [workshop]="shop" [logged]="logged"></app-workshop>
+
+        </mat-card>
+    </div>
+</div>
+
+<div class="text-center" *ngIf="logged && logged.type == 2">
+    <br/>
+    <span class="header">Sve radionice </span>
+    <br/>
+    <div  class="text-center" *ngFor="let shop of allWorkshops" >
+        <mat-card>
+
+        <app-workshop [workshop]="shop" [logged]="logged"></app-workshop>
+        <p *ngIf="logged && shop.organizer == logged.username && canCancelWorkshop(shop)">
+            <button mat-raised-button color="primary" (click)="cancelWorkshop(shop._id)">Otkaži radionicu</button>
+        </p>    
+
+        </mat-card>
+    </div>
+</div>
+
+
+
+
+<div class="text-center">
+    <br/>
+    <span class="header">Top 5 radionica</span>
+    <br/>
+    <div class="text-center" *ngFor="let shop2 of topFiveWorkshops" >
+        <mat-card>
+            <app-workshop [workshop]="shop2"></app-workshop>
+        </mat-card>
+    </div>
+</div>
+
+
+

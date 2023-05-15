@@ -1,0 +1,19 @@
+
+    <mat-card-header>
+      <div mat-card-avatar class="comment-header-image">
+        <img class="commment-component-image" mat-card-img style="max-width: 80px; max-height: 80px;" id="{{imgId}}">
+        
+        </div>
+      <mat-card-title>{{comment.user}}</mat-card-title>
+      <mat-card-subtitle>
+        {{ comment.timestamp.getDate().toString().padStart(2, '0')}}-{{ (comment.timestamp.getMonth()+1).toString().padStart(2, '0')}}-{{ comment.timestamp.getFullYear()}}
+        , {{comment.timestamp.getHours().toString().padStart(2, '0')}}:{{comment.timestamp.getMinutes().toString().padStart(2, '0')}}
+    </mat-card-subtitle>
+    </mat-card-header>
+    
+    <mat-card-content>
+      <p>
+        {{comment.comment}}
+      </p>
+    </mat-card-content>
+              

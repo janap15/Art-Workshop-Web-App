@@ -1,0 +1,26 @@
+.edit-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+.full-width {
+    width: 100%;
+}
+
+.img-container {
+  position: relative;
+  float : left;
+}
+
+.close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px !important;
+  height: 20px !important;
+  min-width: unset !important;
+  padding: 4px;
+  line-height: 15px;
+}

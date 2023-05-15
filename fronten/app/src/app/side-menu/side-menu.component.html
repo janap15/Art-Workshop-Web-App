@@ -1,0 +1,32 @@
+<mat-nav-list class="side-color">
+
+    <span *ngIf="logged && (logged.type == 1 || logged.type == 2)">
+        <a mat-list-item routerLink="/profile"  routerLinkActive="active" class="menu-item">Profil</a>
+    </span>
+
+    <span *ngIf="logged && logged.type == 0">
+        <a mat-list-item routerLink="/admin"  routerLinkActive="active" class="menu-item">Administrator</a>
+    </span>
+
+    <a mat-list-item routerLink="/workshops" *ngIf="!logged || (logged && logged.username != 'admin')"routerLinkActive="active">Radionice</a>
+    
+    <a mat-list-item routerLink="/workshopsAdmin" *ngIf="logged && logged.username == 'admin'"routerLinkActive="active">Radionice</a>
+
+    <span *ngIf="logged && logged.type == 1">
+        <a mat-list-item routerLink="/addWorkshop"  routerLinkActive="active" class="menu-item">Postani organizator</a>
+    </span>
+
+    <span *ngIf="logged && (logged.type == 0 || logged.type == 2)">
+        <a mat-list-item routerLink="/addWorkshop"  routerLinkActive="active" class="menu-item">Dodaj radionicu</a>
+    </span>
+
+    <span *ngIf="logged">
+        <a mat-list-item routerLink="/passwordChange" routerLinkActive="active" class="menu-item">Promeni lozinku</a>
+    </span>
+
+    <button *ngIf="logged" mat-list-item (click)="logout()">
+        <span style="font-size: 18px;">Odjavi se</span>
+    </button>
+
+
+</mat-nav-list>

@@ -1,0 +1,48 @@
+<mat-toolbar color="primary">
+
+    <mat-toolbar-row >
+        <div class="show-xs">
+            <button mat-icon-button (click)="onToggleSidenav()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <a [routerLink]="home()" class="menu-item">
+                <mat-icon style="margin-bottom: -7.5px;">home</mat-icon>
+            </a>
+        </div>
+    
+            <div class="hide-xs">
+                <a [routerLink]="home()" class="menu-item">
+                    <mat-icon style="margin-bottom: -5px;">home</mat-icon>
+                </a>
+                <span *ngIf="logged && (logged.type == 1 || logged.type == 2)">
+                    <a routerLink="/profile"  routerLinkActive="active" class="menu-item">Profil</a>
+                </span>
+
+                <span *ngIf="logged && logged.type == 0">
+                    <a routerLink="/admin"  routerLinkActive="active" class="menu-item">Administrator</a>
+                </span>
+
+                <a routerLink="/workshops" *ngIf="!logged || logged.type == 1 || logged.type == 2"routerLinkActive="active">Radionice</a>
+                
+                <a routerLink="/workshopsAdmin" *ngIf="logged && logged.username == 'admin'"routerLinkActive="active">Radionice</a>
+
+                <span *ngIf="logged && logged.type == 1">
+                    <a routerLink="/addWorkshop"  routerLinkActive="active" class="menu-item">Postani organizator</a>
+                </span>
+                <span *ngIf="logged && (logged.type == 0 || logged.type == 2)">
+                    <a routerLink="/addWorkshop"  routerLinkActive="active" class="menu-item">Dodaj radionicu</a>
+                </span>
+            </div>
+
+            <div class="align-right menu-item logout-item hide-xs">
+                <span *ngIf="logged">
+                    <a routerLink="/passwordChange" routerLinkActive="active" class="menu-item">Promeni lozinku</a>
+                </span>
+                <button *ngIf="logged" mat-icon-button (click)="logout()">
+                    <span style="font-size: 18px;">Odjavi se</span>
+                </button>
+            </div>
+ 
+
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,117 @@
+
+<div class="content">
+    
+    <form class="edit-form text-center">
+       
+        <span class="header text-center">Uredite radionicu</span> <br/><br/>
+
+        <img *ngIf="workshop.photo == ''" src="../../assets/workshop.jpg">
+        <img id="img">
+        <br/>
+        <button type="button" mat-raised-button color="accent" (click)="mainImgInput.click()">Dodaj glavnu sliku</button>
+        <input hidden type="file" (change)="mainImgUpload($event)" accept="image/png, image/jpeg, image/jpg" #mainImgInput name="mainImg">
+        &nbsp;<mat-label>{{mainImgName}}</mat-label>
+        <br/><span>{{messageImg}}</span>
+        <br/><br/>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Naziv radionice</mat-label>
+            <input matInput type="text" [value]="workshop.title" [(ngModel)]="workshop.title" name="title">
+        </mat-form-field> 
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Mesto održavanja</mat-label>
+            <input matInput type="text" [value]="workshop.address" [(ngModel)]="workshop.address" name="address">
+        </mat-form-field> 
+
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Datum održavanja</mat-label>
+            <input matInput [min]="minDate" [matDatepicker]="picker" [value]="workshop.date" [(ngModel)]="inputDate" name="date">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker name="datePicker"></mat-datepicker>
+        </mat-form-field>
+        <br/><br/>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Vreme održavanja</mat-label>
+            <input type="time" matInput name="week" min="0:00" max="22:00" name="time" [value]="time" [(ngModel)]="inputTime">
+         </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Kratak opis</mat-label>
+            <input matInput type="text" [value]="workshop.description_short" [(ngModel)]="workshop.description_short" name="description_short">
+        </mat-form-field>
+        <br/>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Duži opis</mat-label>
+            <input matInput type="text" [value]="workshop.description_long" [(ngModel)]="workshop.description_long" name="description_long">
+        </mat-form-field>
+        <br/>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Broj učesnika</mat-label>
+            <input matInput type="number" [value]="workshop.number_participants" [(ngModel)]="workshop.number_participants" name="number_pariticpants">
+        </mat-form-field>
+        <br/>
+
+        <button type="button" mat-raised-button color="accent" (click)="galleryImgInput.click()">Dodaj galeriju slika</button>
+        <input hidden type="file" (change)="galleryImgUpload($event)" multiple accept="image/png, image/jpeg, image/jpg" #galleryImgInput name="galleryImg">
+
+        
+        <br/>
+        <br/>
+
+        <div style="display: inline-block">
+        <span *ngFor="let egsrc of existingGalleryImgSrcs; index as i">
+            <div class="img-container" >
+                <button type="button" class="close-button" mat-raised-button color="warn" (click)="removeExistingGalleryImg(i)">x</button>
+                <img style="max-width: 250px; max-height: 250px;" [src]="egsrc">
+            </div>
+            <div></div>
+        </span>
+        </div>
+
+        <div style="display: inline-block">
+        <span *ngFor="let gsrc of galleryImgSrcs; index as i">
+            <div class="img-container" >
+                <button type="button" class="close-button" mat-raised-button color="warn" (click)="removeGalleryImg(i)">x</button>
+                <img style="max-width: 250px; max-height: 250px;" [src]="gsrc">
+            </div>
+            <div></div>
+        </span>
+        </div>
+
+        <div style="clear: left"></div>
+        <br/><span>{{messageGalleryImg}}</span>
+        <br/><br/>
+
+
+        <br/>
+        <button mat-raised-button color="primary" (click)="edit()">Uredi</button>
+        <br/> <br/>
+        <span style="font-size: large">{{message}}</span>
+        <br/>
+
+        <button mat-raised-button color="primary" *ngIf="logged.type == 2 && workshop.organizer == logged.username " (click)="saveJSON()">Sačuvaj radionicu u JSON formatu</button>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <div *ngIf="workshop.organizer == logged.username">
+            <span class="header text-center">Zahtevi za radionicu</span>
+            <br/>
+            <br/>
+            <div *ngFor="let user of workshop.pending">
+                <h3>
+                    {{user}} 
+                    <button mat-raised-button color="accent" (click)="acceptUser(user)">Prihvati</button>
+                </h3>
+            </div>
+            <div *ngIf="workshop.pending.length == 0">
+                <h2>Nema zahteva za radionicu.</h2>
+            </div>
+        </div>
+    </form>
+</div>

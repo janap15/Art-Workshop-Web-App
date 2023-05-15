@@ -1,0 +1,104 @@
+
+<div class="content">
+    
+    <form class="org-form text-center">
+        
+        <span *ngIf="logged.type == 1" class="header text-center">Predložite radionicu</span> <br/>
+        <span *ngIf="logged.type == 2 || logged.type == 0" class="header text-center">Dodajte radionicu</span> <br/>
+
+        <div *ngIf="logged.type == 2">
+            <br/>
+            <button type="button" mat-raised-button color="accent" (click)="JSON.click()">Dodajte JSON šablon</button>
+            <input hidden type="file" (change)="JSONUpload($event)" accept="application/JSONs" #JSON name="mainImg">
+            &nbsp;<mat-label>{{jsonFileName}}</mat-label>
+            <br/><span>{{messageJSON}}</span>
+            <br/><br/>
+        </div>
+
+        <img id="img" style="max-width: 250px; max-height: 250px;"> <br/>
+        <button type="button" id="#mainImg" mat-raised-button color="accent" (click)="mainImgInput.click()">Dodaj glavnu sliku</button>
+        <input hidden type="file" (change)="mainImgUpload($event)" accept="image/png, image/jpeg, image/jpg" #mainImgInput name="mainImg">
+        &nbsp;<mat-label>{{mainImgName}}</mat-label>
+        <br/><span>{{messageImg}}</span>
+        <br/><br/>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Naziv radionice</mat-label>
+            <input matInput type="text" [(ngModel)]="title" name="title">
+        </mat-form-field> 
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Mesto održavanja</mat-label>
+            <input matInput type="text" [(ngModel)]="address" name="address">
+        </mat-form-field> 
+
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Datum održavanja</mat-label>
+            <input matInput [min]="minDate" [matDatepicker]="picker" [(ngModel)]="inputDate" name="date">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker name="datePicker"></mat-datepicker>
+        </mat-form-field>
+        <br/><br/>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Vreme održavanja</mat-label>
+            <input type="time" matInput name="week" min="0:00" max="22:00" name="time" [(ngModel)]="inputTime">
+         </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Kratak opis</mat-label>
+            <input matInput type="text" [(ngModel)]="description_short" name="description_short">
+        </mat-form-field>
+      
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Duži opis</mat-label>
+            <input matInput type="text" [(ngModel)]="description_long" name="description_long">
+        </mat-form-field>
+        
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Broj učesnika</mat-label>
+            <input matInput type="number" [(ngModel)]="number_participants" name="number_pariticpants">
+        </mat-form-field>
+      
+
+        <button type="button" mat-raised-button color="accent" (click)="galleryImgInput.click()">Dodaj galeriju slika</button>
+        <input hidden type="file" (change)="galleryImgUpload($event)" multiple accept="image/png, image/jpeg, image/jpg" #galleryImgInput name="galleryImg">
+        <br/>
+        <br/>
+
+
+        <div style="display: inline-block">
+        <span *ngFor="let egsrc of existingGalleryImgSrcs; index as i">
+            <div class="img-container" >
+                <button type="button" class="close-button" mat-raised-button color="warn" (click)="removeExistingGalleryImg(i)">x</button>
+                <img style="max-width: 250px; max-height: 250px;" [src]="egsrc">
+            </div>
+            <div></div>
+        </span>
+        </div>
+
+        <div style="display: inline-block">
+        <span *ngFor="let gsrc of galleryImgSrcs; index as i">
+            <div class="img-container" >
+                <button type="button" class="close-button" mat-raised-button color="warn" (click)="removeGalleryImg(i)">x</button>
+                <img style="max-width: 250px; max-height: 250px;" [src]="gsrc">
+            </div>
+            <div></div>
+        </span>
+        </div>
+
+        <div style="clear: left"></div>
+
+        <br/><span>{{messageGalleryImg}}</span>
+        <br/><br/>
+        
+        <button *ngIf="logged.type == 1" mat-raised-button color="primary" (click)="add()">Predloži</button>
+        <button *ngIf="logged.type == 2 || logged.type == 0" mat-raised-button color="primary" (click)="add()">Dodaj</button>
+        <br/> <br/>
+        <span style="font-size: large">{{message}}</span>
+        <br/>
+    </form>
+</div>
+

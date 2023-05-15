@@ -1,0 +1,75 @@
+
+<div id="org" class="text-center" >
+    <span *ngIf="workshop != null">
+        <br/>
+        <div class="header">{{workshop.title}}</div>
+        <br/>
+        <img [src]="mainImgSrc">
+        <h2>{{workshop.description_long}}</h2>
+        <h3>Organizator: {{workshop.organizer}}</h3>
+        <h3>Datum i vreme održavanja: 
+            {{ workshop.date.getDate().toString().padStart(2, '0')}}-{{ (workshop.date.getMonth()+1).toString().padStart(2, '0')}}-{{ workshop.date.getFullYear()}}
+            u {{workshop.date.getHours().toString().padStart(2, '0')}}:{{workshop.date.getMinutes().toString().padStart(2, '0')}}
+        </h3>
+        <button mat-raised-button color="primary" *ngIf="logged.type == 1 && workshop.number_left > 0 && canRequest" (click)="addToPending()">Prijavi me</button>
+        <button mat-raised-button color="primary" *ngIf="logged.type == 1 && workshop.number_left == 0 && canRequest" (click)="addToWaiting()">Obavesti me kada se oslobodi mesto</button>
+              
+        <br/>
+        <br/>
+        <div id="map" #map></div>
+        <br/>
+
+        <div *ngIf="hasAttended" class="text-center">
+            <h2>Radionica ima: {{workshop.likes.length}} sviđanja</h2>
+            <h2 *ngIf="canLike">Možete označiti da vam se radionica sviđa: 
+            <button mat-raised-button color="accent" (click)="like()">Sviđa mi se</button> </h2>
+
+            <h1>Komentari</h1>
+            <div *ngFor="let comment of comments; index as i" class="text-center" >
+                <mat-card class="comment-card">
+                    <app-comment [comment]="comment" [i]="i"></app-comment>
+                </mat-card>
+            </div>
+            <br/>
+            <h2> Ostavite komentar </h2>
+            <form class="comm-form text-center"> 
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Komentar</mat-label>
+                    <textarea matInput [(ngModel)]="newComment" name="newComment"></textarea>
+                </mat-form-field>
+                <button mat-raised-button color="accent" (click)="addComment()">Pošalji</button> 
+                <br/>
+                <span>{{message}}</span>
+            </form>
+            <br/>
+        </div>
+
+        <br/>
+        <div>
+            <span class="header">Galerija slika</span>
+            <br/>
+            <br/>
+            <div *ngFor="let imageSrc of gallery">
+                <img [src]="imageSrc">
+                <br/>
+                <br/>
+            </div>
+        </div>
+        <br/>
+        <div *ngIf="canBeginChat">
+            <form class="comm-form text-center"> 
+                <h2>Možete započeti ćaskanje</h2>
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Poruka</mat-label>
+                    <textarea matInput [(ngModel)]="newMess" name="newMess"></textarea>
+                </mat-form-field>
+                <button mat-raised-button color="accent" (click)="beginChat()">Pošalji</button> 
+                <br/>
+                <span>{{errMess}}</span>
+            </form>
+            <br/>
+            <br/>
+        </div>
+        
+    </span>
+</div>

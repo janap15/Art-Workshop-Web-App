@@ -1,0 +1,45 @@
+.receiver-class{
+    text-align: left;
+}
+
+.sender-class{
+    text-align: right;
+}
+
+.sender-image {
+    float: right;
+    width: 8%;
+    height: 8%;
+    max-width: 60px;
+    max-height: 90px;
+    border-radius: 20px;
+    margin-left: 5px;
+}
+
+.receiver-image {
+    float: left;
+    width: 8%;
+    height: 8%;
+    max-width: 60px;
+    max-height: 90px;
+    margin-right: 5px;
+    border-radius: 20px;
+}
+
+.p-right {
+    float: right;
+}
+
+.p-left {
+    float: left;
+}
+
+  
+.full-width {
+    width: 75%;
+}
+
+.send-mess {
+    margin-left: auto;
+    margin-right: auto;
+}

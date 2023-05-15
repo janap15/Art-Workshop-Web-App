@@ -1,0 +1,27 @@
+
+<div class="text-center">
+    <br/>
+    <div class="header">Učesnici i organizatori</div>
+    <br/>
+    <div *ngFor="let user of activeUsers">
+        <h3>{{user.username}} &nbsp;&nbsp;
+        <a [routerLink]="'/editUser/'+user.username" class="link">Uredi</a> &nbsp;&nbsp;&nbsp;&nbsp;
+        <button mat-raised-button color="primary" (click)="delete(user.username)">Obriši korisnika</button>
+        </h3>
+    </div>
+    <a mat-raised-button color="accent" href="addUser">Dodaj korisnika</a>
+
+    <br>
+    <hr>
+    <br/>
+    <div class="header">Zahtevi za registraciju</div>
+    <br/>
+    <div *ngFor="let reqUser of registerRequests">
+        <h3>{{reqUser.username}} <span *ngIf="reqUser.type == 1">(učesnik)</span>
+            <span *ngIf="reqUser.type == 2">(organizator)</span> &nbsp;&nbsp;
+        <button mat-raised-button color="primary" (click)="approve(reqUser.username)">Odobri korisnika</button> &nbsp;&nbsp;
+        <button mat-raised-button color="accent" (click)="reject(reqUser.username)">Odbij korisnika</button>
+        </h3>
+    </div>
+
+</div>

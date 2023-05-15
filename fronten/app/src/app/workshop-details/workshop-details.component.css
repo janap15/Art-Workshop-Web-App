@@ -1,0 +1,40 @@
+#map { 
+    height: 350px; 
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment-card {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+.comment-header-image {
+
+    background-size: cover;
+}
+
+
+.comm-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+.full-width {
+    width: 100%;
+}
+
+
+.link {
+  color: #673ab7;
+}
+
+a:hover, a:active{
+  color: #b096dc;
+}

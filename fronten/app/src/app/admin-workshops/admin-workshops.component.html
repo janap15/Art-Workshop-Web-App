@@ -1,0 +1,23 @@
+<div class="text-center">
+    <br/>
+    <span class="header text-center">Radionice</span>
+    <br/>
+    <div *ngFor="let workshop of workshops">
+        <mat-card>
+        <app-workshop [workshop]="workshop" [logged]="logged"></app-workshop>
+        <button mat-raised-button color="primary" (click)="deleteWorkshop(workshop._id)">Obriši radionicu</button>
+        </mat-card>
+    </div>
+
+    
+    <br/>
+    <span class="header text-center">Zahtevi za radionice</span>
+    <br/>
+    <div *ngFor="let workshop2 of requestedWorkshops">
+        <mat-card>
+        <app-workshop [workshop]="workshop2" [logged]="logged"></app-workshop>
+        <button [disabled]="!workshop2.canRequest" mat-raised-button color="primary" (click)="acceptWorkshop(workshop2)">Odobri radionicu</button>
+    </mat-card>
+    </div>
+    
+</div>

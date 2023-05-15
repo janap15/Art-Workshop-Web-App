@@ -1,0 +1,35 @@
+table {
+    margin: 0 auto;
+    width: 50%;
+}
+
+td, th {
+    text-align: center !important
+}
+  
+button {
+margin: 16px 8px;
+}
+
+
+.edit-link {
+    color: #673ab7;
+    font-size: large;
+}
+
+a:hover, a:active{
+    color: #b096dc;
+}
+
+.chat {
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    border: black 2px solid;
+    border-radius: 20px;
+    width: 50%;
+    max-height: 300px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}

@@ -1,0 +1,42 @@
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover, a:active{
+    color: #c4b2e4;
+}
+
+.menu-item{
+    padding: 5px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.align-right {
+    margin-left: auto;
+}
+
+.logout-item {
+    margin-right: 35px;
+}
+
+button:hover {
+    color: #c4b2e4;
+}
+
+.active {
+    color: #c4b2e4 !important;
+}
+
+@media(min-width: 1000px){
+    .show-xs{
+        display: none;
+    }
+}
+
+@media(max-width: 999px){
+    .hide-xs{
+        display: none;
+    }
+}

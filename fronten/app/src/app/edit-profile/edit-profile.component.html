@@ -1,0 +1,82 @@
+
+<div class="content">
+    <form class="edit-form text-center">
+        <span class="header text-center">Izmena profila korisnika {{logged.username}}</span> &nbsp;
+        
+        <br/><br/>
+        <img *ngIf="logged.profileImg == ''" src="../../assets/avatar-icon.png">
+        <img id="img">
+
+        <br/>
+        <button type="button" mat-raised-button color="primary" (click)="profileImgInput.click()">Izmeni profilnu sliku</button>
+        <input hidden type="file" (change)="profileImgUpload($event)" accept="image/png, image/jpeg, image/jpg" #profileImgInput name="profileImg">
+        &nbsp;<mat-label>{{profileImgName}}</mat-label>
+        <br/> <span>{{messageImg}}</span>
+        <br/>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Ime</mat-label>
+            <input matInput type="text" [value]="logged.firstname" [(ngModel)]="logged.firstname" name="firstname">
+        </mat-form-field> 
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Prezime</mat-label>
+            <input matInput type="text" [value]="logged.lastname" [(ngModel)]="logged.lastname" name="lastname">
+        </mat-form-field> 
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Telefon</mat-label>
+            <input matInput [value]="logged.phone" type="text" [(ngModel)]="logged.phone" name="phone">
+        </mat-form-field>
+    
+
+        <div *ngIf="logged.type == 2">
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Naziv organizacije</mat-label>
+                <input matInput [value]="logged.orgName" type="text" [(ngModel)]="logged.orgName" name="orgName">
+            </mat-form-field>
+        
+
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Država</mat-label>
+                <input matInput [value]="logged.state" type="text" [(ngModel)]="logged.state" name="state">
+            </mat-form-field>
+        
+
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Grad</mat-label>
+                <input matInput [value]="logged.city" type="text" [(ngModel)]="logged.city" name="city">
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Poštanski broj</mat-label>
+                <input matInput [value]="logged.postNum" type="text" [(ngModel)]="logged.postNum" name="post">
+            </mat-form-field>
+    
+
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Ulica</mat-label>
+                <input matInput [value]="logged.street" type="text" [(ngModel)]="logged.street" name="street">
+            </mat-form-field>
+      
+
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Broj</mat-label>
+                <input matInput [value]="logged.streetNum" type="number" [(ngModel)]="logged.streetNum" name="number">
+            </mat-form-field>
+   
+
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Matični broj</mat-label>
+                <input matInput [value]="logged.MB" type="text" [(ngModel)]="logged.MB" name="MB">
+            </mat-form-field>
+  
+        </div>
+        <br/>
+        <button mat-raised-button color="primary" (click)="update()">Izmeni podatke</button>
+        <br/> <br/>
+        <span style="font-size: large">{{message}}</span>
+        <br/>
+    </form>
+</div>
+

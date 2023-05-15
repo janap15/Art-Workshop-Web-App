@@ -1,0 +1,26 @@
+
+<div *ngIf="!logged" class="content">
+   
+    <form class="login-form text-center">
+        <span class="header text-center">Prijavite se</span>  <br/><br/>
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Korisničko ime</mat-label>
+          <input matInput type="text" [(ngModel)]="username" name="username">
+        </mat-form-field> 
+        <br/>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Lozinka</mat-label>
+            <input matInput type="password" [(ngModel)]="password" name="password">
+        </mat-form-field>
+        <br/>
+        <a routerLink="/requestPasswordRecovery" class="pass-link">Zaboravljena lozinka</a>
+        <br/>
+        <button mat-raised-button color="primary" (click)="login()">Prijavi se</button>
+        <br/>
+        <span>{{message}}</span>
+        <br/><br/>
+        Nemate nalog? &nbsp;
+        <a routerLink="/register" class="reg-link">Registrujte se</a>
+    </form>
+
+</div>

@@ -1,0 +1,18 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation" class="side-color">
+        <app-side-menu (sidenavClose)="sidenav.close()"></app-side-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <app-main-menu (sidenavToggle)="sidenav.toggle()"></app-main-menu>
+      <main>
+        <div style="min-height: 88vh;">
+            <router-outlet></router-outlet>
+        </div>
+        <footer class="text-center myFooter">
+        Jana Pašajlić Copyright &copy; Odsek za softversko inženjerstvo Elektrotehničkog fakulteta Univerziteta u Beogradu
+        </footer>
+
+    </main>
+      
+</mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,106 @@
+
+<div class="content">
+    <form class="reg-form text-center">
+        <span class="header text-center">Dodajte novog korisnika</span>  <br/><br/>
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Ime</mat-label>
+            <input matInput type="text" [(ngModel)]="firstname" name="firstname">
+        </mat-form-field> 
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Prezime</mat-label>
+            <input matInput type="text" [(ngModel)]="lastname" name="lastname">
+        </mat-form-field> 
+
+        <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Korisničko ime</mat-label>
+          <input matInput type="text" [(ngModel)]="username" name="username">
+        </mat-form-field> 
+        <br/>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Lozinka</mat-label>
+            <input matInput type="text" [(ngModel)]="password" name="password">
+        </mat-form-field>
+        <br/>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Ponovite lozinku</mat-label>
+            <input matInput type="text" [(ngModel)]="passwordAgain" name="passwordAgain">
+        </mat-form-field>
+        <br/>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Telefon</mat-label>
+            <input matInput placeholder="xxx/xxx-xxxx" type="text" [(ngModel)]="phone" name="phone">
+        </mat-form-field>
+        <br/>
+        
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label>E-mail adresa</mat-label>
+            <input matInput placeholder="example@gmail.com" type="text" [(ngModel)]="email" name="email">
+        </mat-form-field>
+        <br/>
+
+        <button type="button" mat-raised-button color="primary" (click)="profileImgInput.click()">Dodaj profilnu sliku</button>
+        <input hidden type="file" (change)="profileImgUpload($event)" accept="image/png, image/jpeg, image/jpg" #profileImgInput name="profileImg">
+        &nbsp;<mat-label>{{profileImgName}}</mat-label>
+        <br/> <span>{{messageImg}}</span>
+        <br/><br/>
+        
+        
+        <button mat-raised-button color="accent" (click)="onclick()">{{org?"Ne želim da dodam organizatora" : 
+            "Želim da dodam organizatora"}}</button>
+        <br/>
+        <br/>
+        <div *ngIf="org">
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Naziv organizacije</mat-label>
+                <input matInput type="text" [(ngModel)]="orgName" name="orgName">
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Država</mat-label>
+                <input matInput type="text" [(ngModel)]="state" name="state">
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Grad</mat-label>
+                <input matInput type="text" [(ngModel)]="city" name="city">
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Poštanski broj</mat-label>
+                <input matInput type="text" [(ngModel)]="post" name="post">
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Ulica</mat-label>
+                <input matInput type="text" [(ngModel)]="street" name="street">
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Broj</mat-label>
+                <input matInput type="number" [(ngModel)]="number" name="number">
+            </mat-form-field>
+            <br/>
+
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Matični broj</mat-label>
+                <input matInput type="text" [(ngModel)]="MB" name="MB">
+            </mat-form-field>
+            <br/>
+        </div>
+        <br/>
+        <button mat-raised-button color="primary" (click)="add()">Dodaj</button>
+        <br/> <br/>
+        <span style="font-size: large">{{message}}</span>
+        <br/>
+    </form>
+</div>
+

@@ -1,0 +1,32 @@
+
+<div id="chat">
+    <div *ngIf="show">
+        <div *ngFor="let message of messages" >
+            <div *ngIf="sender == message.sender" class="sender-class">
+                <img [src]="senderSrc" class="sender-image">
+                <p><b>{{sender}}</b>, {{message.timestamp.getDate().toString().padStart(2, '0')}}-{{ (message.timestamp.getMonth()+1).toString().padStart(2, '0')}}-{{ message.timestamp.getFullYear()}}
+                {{message.timestamp.getHours().toString().padStart(2, '0')}}:{{message.timestamp.getMinutes().toString().padStart(2, '0')}}
+                </p>
+                <p>{{message.text}}</p>
+            </div>
+            <br/>
+            <div *ngIf="sender != message.sender" class="receiver-class">
+                    <img [src]="receiverSrc" class="receiver-image">
+                    <p><b>{{message.sender}}</b>, {{message.timestamp.getDate().toString().padStart(2, '0')}}-{{ (message.timestamp.getMonth()+1).toString().padStart(2, '0')}}-{{ message.timestamp.getFullYear()}}
+                    {{message.timestamp.getHours().toString().padStart(2, '0')}}:{{message.timestamp.getMinutes().toString().padStart(2, '0')}}
+                    </p>
+                <p>{{message.text}}</p>
+            </div>
+        </div>
+        <br>
+        <div class="send-mess text-center">
+            <hr size="2px" color="black">
+            <mat-form-field class="full-width" appearance="fill">
+                <mat-label>Poruka</mat-label>
+                <input matInput [(ngModel)]="mess" type="text" name="mess" > 
+            </mat-form-field>
+            &nbsp;&nbsp;<button mat-raised-button color="primary" (click)="sendMessage()">Pošalji</button>
+            <div>{{error}}</div>
+        </div>
+    </div>
+</div>

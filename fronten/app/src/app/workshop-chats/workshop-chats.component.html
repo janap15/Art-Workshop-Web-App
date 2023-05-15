@@ -1,0 +1,23 @@
+<br/>
+<h1 class="text-center" style="font-weight: bolder;">Vaša ćaskanja</h1>
+<div *ngIf="logged.type == 2">
+    <br/>
+    <h2 class="text-center" *ngIf="participantsChatters.length == 0">Nemate ćaskanja</h2>
+    <div *ngFor="let element of participantsChatters">
+        
+        <div class="text-center">
+            <button *ngIf="logged.type == 2" mat-raised-button color="primary" 
+            (click)="onclick()">{{show?"Sakrij čet sa korisnikom " + element['_id']['participant'] : 
+            "Prikaži čet sa korisnikom " + element['_id']['participant'] }}</button>
+        </div>
+        <br/>
+        <h2 class="text-center" *ngIf="show">Radionica {{workshop.title}} </h2>
+        <div class="chat" *ngIf="show">
+             
+            <app-chat [participant]="element['_id']['participant']" [organizer]="logged.username" [sender]="logged.username" 
+                       [workshop]="workshop._id" [title]="workshop.title" [show]="show">
+            </app-chat>
+        </div>
+        <br/>
+    </div>
+</div>
